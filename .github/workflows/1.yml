@@ -1,4 +1,18 @@
-name: Step 4, Add branch protections
+name: Greeting on variable day
 
 on:
-  workflow_dispatch:
+  workflow_dispatch
+
+env:
+  DAY_OF_WEEK: Monday
+
+jobs:
+  workflow-1:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Greeting message"
+        run: echo "$Greeting ${github.GITHUB_ACTOR}. Today is $DAY_OF_WEEK!"
+        #env:
+        #  First_Name: Mona
