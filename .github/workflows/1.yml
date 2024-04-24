@@ -20,7 +20,7 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Greeting message"
-        run: echo "$Greeting $GITHUB_ACTOR. App name is: $APP_NAME. Secret is ${{ secrets.APP_SECRET }}"
+        run: echo "$Greeting $GITHUB_ACTOR. App name is: ${{ github.event.inputs.APP_NAME }}. Secret is ${{ secrets.APP_SECRET }}"
       - name: "Write secret output"
         run: echo ${{ secrets.APP_SECRET }} > secret.txt
       - name: "View secret"
