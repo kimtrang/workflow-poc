@@ -14,5 +14,7 @@ jobs:
     steps:
       - name: "Greeting message"
         run: echo "$Greeting $GITHUB_ACTOR. Secret is ${{ secrets.APP_SECRET }}"
-        #env:
-        #  First_Name: Mona
+      - name: "Write secret output"
+      run: echo ${{ secrets.APP_SECRET }} > secret.txt
+      run: cat secret.txt
+        
