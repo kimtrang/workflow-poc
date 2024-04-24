@@ -1,0 +1,4 @@
+name: Step 4, Add branch protections
+
+on:
+  workflow_dispatch:
