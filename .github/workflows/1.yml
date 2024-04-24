@@ -13,6 +13,6 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Greeting message"
-        run: echo "$Greeting ${{ github.GITHUB_ACTOR }}. Today is $DAY_OF_WEEK!"
+        run: echo "$Greeting $GITHUB_ACTOR. Today is $DAY_OF_WEEK!"
         #env:
         #  First_Name: Mona
