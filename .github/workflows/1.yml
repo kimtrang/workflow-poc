@@ -1,7 +1,14 @@
 name: Secret redact testing
 
 on:
-  workflow_dispatch
+  workflow_call:
+    inputs:
+      APP_NAME:
+        required: true
+        type: string
+    secrets:
+      APP_SECRET:
+        required: true
 
 env:
   DAY_OF_WEEK: Monday
@@ -13,7 +20,7 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Greeting message"
-        run: echo "$Greeting $GITHUB_ACTOR. Secret is ${{ secrets.APP_SECRET }}"
+        run: echo "$Greeting $GITHUB_ACTOR. App name is: $APP_NAME. Secret is ${{ secrets.APP_SECRET }}"
       - name: "Write secret output"
         run: echo ${{ secrets.APP_SECRET }} > secret.txt
       - name: "View secret"
