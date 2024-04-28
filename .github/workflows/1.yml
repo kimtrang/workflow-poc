@@ -1,7 +1,7 @@
 name: Secret redact testing
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       APP_NAME:
         required: true
