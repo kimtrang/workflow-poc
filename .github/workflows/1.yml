@@ -15,7 +15,8 @@ env:
 
 jobs:
   workflow-1:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       Greeting: Hello
     steps:
